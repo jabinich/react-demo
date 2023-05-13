@@ -42,7 +42,7 @@ function ContactManager(props){
   return(
     <div>
       <AddPersonForm></AddPersonForm>
-      <PeopleList></PeopleList>
+      <PeopleList data={contacts}></PeopleList>
     </div>
   );
 }
