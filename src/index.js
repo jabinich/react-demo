@@ -40,7 +40,7 @@ function PeopleList(props) {
   }
 
   const listItems = arr.map((val, index) =>
-    <div>
+    <div className='item_div'>
     <li key={index}>{val}</li>
     <button onClick={ ()=> delContact(index) }>Remove</button>
     </div>
