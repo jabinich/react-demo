@@ -21,8 +21,8 @@ ul {
 }
 li {
   list-style-type: none;
-  padding: 10px;
-  margin: 10px;
+  padding: 6px;
+  margin-right: 20px;
   background-color:rgba(61, 120, 175, 0.411);
   border-radius: 10px;
   flex:1;
@@ -33,6 +33,7 @@ form {
 
 .item_div {
   display: flex;
+  margin: 10px;
   align-items: center;
 }
 

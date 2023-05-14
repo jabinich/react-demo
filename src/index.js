@@ -75,6 +75,25 @@ root.render(
   <ContactManager data={contacts} />
 );
 
+// an Expample for counter
+function Counter() {
+  const [counter, setCounter] = useState(0);
+
+  function increment() {
+    setCounter(counter+1);
+  }
+  return <div className='item_div'>
+  <p>{counter}</p> &nbsp;
+  <button onClick={increment}>Increment</button>
+  </div>;
+}
+
+const el = <Counter />; 
+ReactDOM.render(
+  el, 
+  document.getElementById('divCounter')
+);
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
