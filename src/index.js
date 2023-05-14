@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { useState } from 'react';
 import './index.css';
+import { Provider } from 'react-redux';
+import { legacy_createStore as createStore} from 'redux'
+import Counter from './Counter';
+
 import reportWebVitals from './reportWebVitals';
 
 function AddPersonForm(props) {
@@ -75,20 +79,33 @@ root.render(
   <ContactManager data={contacts} />
 );
 
-// an Expample for counter
-function Counter() {
-  const [counter, setCounter] = useState(0);
+/*****************************
+an Expample for counter
+*****************************/
 
-  function increment() {
-    setCounter(counter+1);
+//reducer
+const initialState = {
+  count: 0
+};
+
+function reducer(state = initialState, action) {
+  switch(action.type) {
+    case 'INCREMENT':
+      return { count: state.count + action.num };
+    default:
+      return state;
   }
-  return <div className='item_div'>
-  <p>{counter}</p> &nbsp;
-  <button onClick={increment}>Increment</button>
-  </div>;
 }
 
-const el = <Counter />; 
+//store
+//const store = createStore(reducer);
+const store = createStore(reducer);
+
+const el = <Provider store={store}>
+    <Counter/>
+  </Provider>; 
+
+//const el = <Counter />; 
 ReactDOM.render(
   el, 
   document.getElementById('divCounter')
