@@ -100,7 +100,6 @@ function reducer(state = initialState, action) {
 }
 
 //store
-//const store = createStore(reducer);
 const store = createStore(reducer);
 
 const el = <Provider store={store}>
